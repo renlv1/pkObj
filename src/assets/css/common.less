@@ -1,0 +1,431 @@
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+@font-face {
+  font-family: small;
+  src: url('../font/NHaasGroteskDSPro-45Lt.otf');
+}
+@font-face {
+  font-family: big;
+  src: url('../font/NHaasGroteskDSPro-65Md.otf');
+}
+.center(){//水平垂直局中
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.swiper-container{
+  overflow: inherit;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+  bottom: -30px;
+}
+@media screen and (max-width: 1024px) {
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom: -20px;
+  }
+}
+.isClick{ // 可点击对象
+  cursor: pointer;
+  user-select: none;
+  &:active{
+    opacity: 0.6;
+  }
+}
+.swiper-pagination{
+  .swiper-pagination-bullet{
+    width: 60px;
+    height: 3px;
+    background-color:#1a1a1a;
+    opacity: 0.6;
+    border-radius: 0;
+    &.swiper-pagination-bullet-active{
+      background-color:#e60000;
+
+    }
+  }
+}
+#particles{
+  background-image: url("../../assets/images/home/bigbg.svg");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  background-position: 50% 50%;
+}
+.banner{
+  h3{
+    p{
+      padding-bottom: 15px;
+      span{
+        color: #e60000;
+      }
+    }
+  }
+}
+//强行修改后台传过来的字体颜色
+.notice{
+  .describe{
+    *{
+      line-height: 2 !important;
+    }
+    p{
+      strong{
+        span{
+          color: #232044 !important;
+        }
+      }
+    }
+  }
+}
+.detail{
+  .content{
+    p{
+      strong{
+        span{
+          color: #232044 !important;
+        }
+      }
+    }
+  }
+}
+// 时间选择器
+.el-date-editor{
+  span{
+    &.el-range-separator{
+      padding: 0;
+    }
+  }
+  &.el-range-editor{
+    //margin: 20px 0;
+  }
+}
+// 筛选框
+.filter{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 20px 0 40px;
+  h3{
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0 15px;
+  }
+  .dateFilter{
+
+  }
+  .statuFilter{
+    .selectStatu{
+      position: relative;
+      width: 158px;
+      height: 38px;
+      border: 1px solid #666;
+      .curStatu{
+        height: 38px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        span{
+          display: block;
+          font-size: 16px;
+          color: #1a1a1a;
+        }
+        i{
+          display: inline-block;
+          width: 13px;
+          height: 8px;
+          background-image: url("../../assets/images/row-red.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          transform: rotate(90deg);
+          transition: all 0.5s;
+          &.close{
+            transform: rotate(-90deg);
+          }
+        }
+      }
+      ul{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        height: 0;
+        transition: all 0.5s;
+        overflow: hidden;
+        &.close{
+          height: 200px;
+        }
+        li{
+          padding-left: 20px;
+          width: 160px;
+          background-color: rgba(255,255,255,1);
+          height: 40px;
+          color: #1a1a1a;
+          line-height: 40px;
+          cursor: pointer;
+          &:hover{
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            background-color: rgba(255,255,255,0.8);
+            color: #e60000;
+          }
+        }
+      }
+    }
+  }
+  .queryBtn{
+    width: 160px;
+    height: 40px;
+    background-color: #e60000;
+    opacity: 1;
+    font-size: 16px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    &:active{
+      opacity: 0.5;
+    }
+  }
+}
+.app-tip{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 10;
+  .tipBox{
+    width: 80%;
+    height: 70%;
+    padding: 0 15px;
+    background-color: #fff;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    h4{
+      font-size: 22px;
+      font-weight: bold;
+      color: #1a1a1a;
+      text-align: center;
+      margin: 30px 0px;
+    }
+    .tips{
+      h5{
+        font-size: 14px;
+        color: #1a1a1a;
+        margin-bottom: 20px;
+        line-height: 1.5
+      }
+      p{
+        font-size: 14px;
+        color: #1a1a1a;
+        line-height: 1.5;
+      }
+      h6{
+        margin-top: 20px;
+        font-size: 14px;
+        color: #1a1a1a;
+        line-height: 1.5;
+      }
+    }
+    span{
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      position: absolute;
+      right:10px;
+      top:10px;
+      background-image:url("../../assets/images/arbitrageDetial/close.png");
+      background-size: 100%;
+      background-position: center;
+    }
+  }
+}
+.tip-btn{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-image: url("../../assets/images/arbitrageDetial/tips.png");
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+  margin-left: 10px;
+  @media screen and (max-width: 1024px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+.pcListTable{
+  width: 100%;
+  display: block;
+  thead{
+    width: 100%;
+    display: block;
+    tr{
+      height: 50px;
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      td{
+        font-size: 16px;
+        flex: 1;
+        text-align: center;
+        color: #1a1a1a;
+        &.view{
+          color: #e60000;
+        }
+      }
+    }
+  }
+  tbody{
+    width: 100%;
+    display: block;
+    tr{
+      height: 50px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:hover{
+        font-weight: bold;
+      }
+      &:nth-child(2n){
+        background-color: #fff;
+      }
+      &:nth-child(2n+1){
+        background-color: #f5f6f7;
+      }
+      td{
+        font-size: 16px;
+        flex: 1;
+        text-align: center;
+        color: #1a1a1a;
+        &.view{
+          color: #e60000;
+        }
+      }
+    }
+  }
+}
+.pcDetail{
+  li{
+    height: 50px;
+    font-size: 16px;
+    color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    &:nth-child(2n){
+      background-color: #f5f6f7;
+    }
+    &:nth-child(2n + 1){
+      background-color: #fff;
+    }
+  }
+}
+.bread{
+  height: 50px;
+  span{
+    font-size: 16px;
+    color: #1a1a1a;
+  }
+}
+.billing-app{
+  background-color: #F8F9FA;
+  padding-top: 60px;
+  .billing-head{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #666;
+    height: 60px;
+    line-height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 999;
+    background: #fff;
+    .back{
+      width: 60px;
+      height: 60px;
+      background-image: url("../../assets/images/arbitrageDetial/back.svg");
+      background-size: 30px 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      left: 10px;
+    }
+    .title{
+      width: 100%;
+      padding: 0 70px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #1a1a1a;
+      text-align: center;
+    }
+  }
+  ul{
+    li{
+      padding:0 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      p{
+        display: flex;
+        height: 40px;
+        justify-content: space-between;
+        align-items: center;
+        span{
+          font-size: 18px;
+          color: #232044;
+          font-weight: bold;
+        }
+        i{
+          font-size: 18px;
+          color: #232044;
+        }
+      }
+    }
+  }
+  .recordDetail{
+    div{
+      background-color: #fff;
+      margin:0  20px 15px;
+      padding: 0 20px;
+    }
+    .account{
+      margin-top: 20px;
+      p{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.num{
+          height: 120px;
+          font-weight: bold;
+        }
+      }
+    }
+    .cont{
+      p{
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+      }
+    }
+  }
+}
